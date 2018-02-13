@@ -4,6 +4,7 @@
 // init project
 var express = require('express');
 var app = express();
+var months = {1:"January",2:"February",3:"March",4:"April",5:"May",6:"June",7:"July",8:"August",9:"September",10:"October",11:"November",12:"December"};
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", (req, res) => {
@@ -12,8 +13,9 @@ app.get("/", (req, res) => {
 
 app.get("/:string", (req, res) => {
   var str = req.params.string;
-  var date = s
-  if(Date.parse(str)) { res.send({ "unix": Date.parse(str), "natural": blah }) }
+  var unixDate = Date.parse(str);
+  var date = new Date(unixDate);
+  if(unixDate) { res.send({ "unix": unixDate, "natural": `${months[date.getMonth()+1]} ${date.getDate()}, ${date.getFullYear()}` }) }
   else { res.send({ null: null})}
 });
 
