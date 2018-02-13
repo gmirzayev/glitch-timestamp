@@ -11,7 +11,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:string", (req, res) => {
-  res.send(req.query);
+  var str = req.params.string;
+  if(Date.parse(str)) { res.send({ "unix": Date.parse(str) }) }
+  else { res.send({ null: null})}
 });
 
 /*
