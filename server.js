@@ -16,12 +16,13 @@ app.get("/:string", (req, res) => {
   var validDate = new Date(str);
   var unixDate = new Date(parseInt(str));
   // validDate = validDate.toUTCString();
-  if(validDate) { 
+  if(validDate != null) { 
     res.send({ "unix": validDate.getTime(), "natural": `${months[validDate.getMonth()+1]} ${validDate.getDate()}, ${validDate.getFullYear()}` }) 
   }
   else if(unixDate) {
-    var regDate = unixDate.get();
-    res.send({ "unix": unixDate, "natural": `${months[validDate.getMonth()+1]} ${validDate.getDate()}, ${validDate.getFullYear()}` }) 
+    // var regDate = unixDate.get();
+    res.send("unixtime is" + unixDate);
+    // res.send({ "unix": unixDate, "natural": `${months[unixDate.getMonth()+1]} ${unixDate.getDate()}, ${unixDate.getFullYear()}` }) 
   }
   /*var unixDate = Date.parse(str);
   var date = new Date(unixDate);
