@@ -14,8 +14,11 @@ app.get("/", (req, res) => {
 app.get("/:string", (req, res) => {
   var str = req.params.string;
   var validDate = new Date(str);
-  validDate = validDate.toUTCString();
-  if(validDate) { res.send({ date: validDate }) }
+  var unixDate = new Date(parseInt(str));
+  // validDate = validDate.toUTCString();
+  if(validDate) { 
+    res.send({ date: validDate }) 
+  }
   /*var unixDate = Date.parse(str);
   var date = new Date(unixDate);
   if(unixDate) { res.send({ "unix": unixDate, "natural": `${months[date.getMonth()+1]} ${date.getDate()}, ${date.getFullYear()}` }) }*/
