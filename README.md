@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Welcome to the Glitch BETA
 =========================
 
@@ -25,3 +26,6 @@ Made by [Fog Creek](https://fogcreek.com/)
 -------------------
 
 \ ゜o゜)ノ
+=======
+# glitch-timestamp
+>>>>>>> d6c68994b61f20dc4ee204449f613211cd3cc70c
