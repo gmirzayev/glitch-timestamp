@@ -5,17 +5,22 @@
 var express = require('express');
 var app = express();
 
+// http://expressjs.com/en/starter/basic-routing.html
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + '/views/fccindex.html');
+});
+
+app.get("/:string", (req, res) => {
+  res.send(req.query);
+});
+
+/*
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
-/*
 app.get("/dreams", function (request, response) {
   response.send(dreams);
 });
